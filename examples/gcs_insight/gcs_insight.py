@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# test Andrew is awesome
+
 
 # from googleapiclient import discovery
 from google.cloud import bigquery
@@ -37,13 +37,10 @@ std_table_url3 = "&ds.ds3.type=TABLE&ds.ds3.datasetId={}&ds.ds3.tableId={}"
 std_proj_url4 = "&ds.ds4.connector=bigQuery&ds.ds4.projectId={}"
 std_table_url4 = "&ds.ds4.type=TABLE&ds.ds4.datasetId={}&ds.ds4.tableId={}"
 
-
-
 standard_view_url = std_proj_url + std_table_url
 standard_view_url2 = std_proj_url2 + std_table_url2
 standard_view_url3 = std_proj_url3 + std_table_url3
 standard_view_url4 = std_proj_url4 + std_table_url4
-
 
 final_url = standard_view_url + standard_view_url2 + standard_view_url3 + standard_view_url4 
 
@@ -51,9 +48,6 @@ final_url = standard_view_url + standard_view_url2 + standard_view_url3 + standa
 output_url = ""
 isDetailedExportDifferentLocation = False
 detailedBBDataset = ""
-
-
-
 
 app_version = "3.0"
 
@@ -164,7 +158,6 @@ def main(argv):
     #list_tables(args)
     generate_datastudio_url(args)  # to create urls
     
-
 
 # Main entry point
 if __name__ == "__main__":
