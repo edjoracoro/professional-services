@@ -20,7 +20,7 @@ This step includes the following:
 
 ## To see options
 ```
-python gcs_inisght.py -h
+python gcs_insight.py -h
 ```
 ## Required Flags
  -project project ID that contains the BQ datasets
