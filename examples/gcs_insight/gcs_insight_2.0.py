@@ -1554,26 +1554,7 @@ def main(argv):
     args = parser.parse_args()
     print('Version of GCS_Insight.py  ' + app_version + "\n")
 
-    project_id_temp = "projects/{}".format(args.PROJECT_ID)
-
-    try:
-        # Attempt a simple query that requires BigQuery permissions
-        query_job = bq_client.query("SELECT 1")  
-        query_job.result()  # Wait for the query to complete
-        return True
-    except exceptions.Forbidden as e:
-        print("Permission Denied for BigQuery, check project level permissions.")
-        print(e.message)
-        return sys.exit(1)
-
-
-
-
-
-    args.standard_table = "bucket_detail"
-    output_url = report_base_url 
     
-   
     # This is creates the views ofr now we will focus on just dashboard
     #create_view(args)
     create_bq_views(args)
