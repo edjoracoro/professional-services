@@ -1557,14 +1557,14 @@ def main(argv):
     project_id_temp = "projects/{}".format(args.PROJECT_ID)
 
     try:
-    # Attempt a simple query that requires BigQuery permissions
-    query_job = bq_client.query("SELECT 1")  
-    query_job.result()  # Wait for the query to complete
-    return True
-  except exceptions.Forbidden as e:
-    print("Permission Denied for BigQuery, check project level permissions.")
-    print(e.message)
-    return sys.exit(1)
+        # Attempt a simple query that requires BigQuery permissions
+        query_job = bq_client.query("SELECT 1")  
+        query_job.result()  # Wait for the query to complete
+        return True
+    except exceptions.Forbidden as e:
+        print("Permission Denied for BigQuery, check project level permissions.")
+        print(e.message)
+        return sys.exit(1)
 
 
 
