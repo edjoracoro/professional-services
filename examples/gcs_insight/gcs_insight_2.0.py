@@ -15,7 +15,7 @@
 
 # from googleapiclient import discovery
 from google.cloud import bigquery
-from google.cloud import billing
+# from google.cloud import billing
 from google.api_core import client_info as http_client_info
 from google.api_core.exceptions import PermissionDenied
 from google.cloud.exceptions import NotFound
