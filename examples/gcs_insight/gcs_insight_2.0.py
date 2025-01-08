@@ -114,7 +114,7 @@ def create_bq_views(args):
 
     # The SQL query to be executed for events.
     table_name = "{}.{}".format(dataset, events)
-    view_events.view_query = """
+    view_events.view_query = r"""
         WITH events_view AS (
             SELECT
                 *
@@ -417,7 +417,7 @@ def create_bq_views(args):
     table_name_bucket = "{}.{}".format(dataset, bucket)
     table_name_objecta = "{}.{}".format(dataset, objecta)
     table_name_project = "{}.{}".format(dataset, project)
-    view_buckets.view_query = """
+    view_buckets.view_query = r"""
         WITH
             distinct_snapshots AS (
             SELECT
@@ -785,7 +785,7 @@ def create_bq_views(args):
     view_error = bigquery.Table(view_id_error)
     # The SQL query to be executed for events.
     table_name_error = "{}.{}".format(dataset, error)
-    view_error.view_query = """
+    view_error.view_query = r"""
         WITH error_view AS (
             SELECT
                 *
@@ -1103,7 +1103,7 @@ def create_bq_views(args):
     view_objecta = bigquery.Table(view_id_objecta)
     # The SQL query to be executed for events.
     table_name_objecta = "{}.{}".format(dataset, objecta)
-    view_objecta.view_query = """
+    view_objecta.view_query = r"""
         WITH
             distinct_snapshots AS (
             SELECT
