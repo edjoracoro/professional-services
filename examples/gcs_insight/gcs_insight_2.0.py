@@ -1557,12 +1557,18 @@ def main(argv):
     project_id_temp = "projects/{}".format(args.PROJECT_ID)
 
     try:
-        project_billing_info = billing.CloudBillingClient(
-        ).get_project_billing_info(name=project_id_temp)
-    except PermissionDenied as pde:
-        print("Permission Denied, check project level permission.")
-        print(pde.message)
-        return sys.exit(1)
+    # Attempt a simple query that requires BigQuery permissions
+    query_job = bq_client.query("SELECT 1")  
+    query_job.result()  # Wait for the query to complete
+    return True
+  except exceptions.Forbidden as e:
+    print("Permission Denied for BigQuery, check project level permissions.")
+    print(e.message)
+    return sys.exit(1)
+
+
+
+
 
     args.standard_table = "bucket_detail"
     output_url = report_base_url 
