@@ -20,14 +20,14 @@ This step includes the following:
 
 ## To see options
 ```
-python gcs_insight.py -h
+python gcs_insight_2.0.py -h
 ```
 ## Required Flags
  -project project ID that contains the BQ datasets
  -dataset The dataset name of the GCS Insight views
 ```
 
-python gcs_insight.py -project 'my-project'  -dataset 'gcs_insight' 
+python gcs_insight_2.0.py -project 'my-project'  -dataset 'gcs_insight' 
 
 ```
 
