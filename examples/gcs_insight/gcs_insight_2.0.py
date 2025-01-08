@@ -1540,11 +1540,12 @@ def main(argv):
     parser.add_argument('-project',
                         dest='PROJECT_ID',
                         type=str,
-                        help='Project Id',
+                        help='The Project Id with the GCS Insisight Datasets',
                         required=True)
     parser.add_argument('-dataset',
                         dest='DATASET_NAME',
                         type=str,
+                        help='The name of the dataset that cointains the GCS Insight views in Bigquery',
                         required=True)
     #parser.add_argument('-table',
     #                    dest='TABLE_NAME',
